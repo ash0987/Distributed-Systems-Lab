@@ -95,51 +95,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/CMakeFiles" "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/tests//CMakeFiles/progress.marks"
@@ -185,6 +140,44 @@ test_smoke/fast:
 	cd "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build" && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_smoke.dir/build.make tests/CMakeFiles/test_smoke.dir/build
 .PHONY : test_smoke/fast
 
+# Convenience name for target.
+tests/CMakeFiles/test_log_record.dir/rule:
+	cd "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_log_record.dir/rule
+.PHONY : tests/CMakeFiles/test_log_record.dir/rule
+
+# Convenience name for target.
+test_log_record: tests/CMakeFiles/test_log_record.dir/rule
+.PHONY : test_log_record
+
+# fast build rule for target.
+test_log_record/fast:
+	cd "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build" && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_log_record.dir/build.make tests/CMakeFiles/test_log_record.dir/build
+.PHONY : test_log_record/fast
+
+test_log_record.o: test_log_record.cpp.o
+.PHONY : test_log_record.o
+
+# target to build an object file
+test_log_record.cpp.o:
+	cd "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build" && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_log_record.dir/build.make tests/CMakeFiles/test_log_record.dir/test_log_record.cpp.o
+.PHONY : test_log_record.cpp.o
+
+test_log_record.i: test_log_record.cpp.i
+.PHONY : test_log_record.i
+
+# target to preprocess a source file
+test_log_record.cpp.i:
+	cd "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build" && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_log_record.dir/build.make tests/CMakeFiles/test_log_record.dir/test_log_record.cpp.i
+.PHONY : test_log_record.cpp.i
+
+test_log_record.s: test_log_record.cpp.s
+.PHONY : test_log_record.s
+
+# target to generate assembly for a file
+test_log_record.cpp.s:
+	cd "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build" && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_log_record.dir/build.make tests/CMakeFiles/test_log_record.dir/test_log_record.cpp.s
+.PHONY : test_log_record.cpp.s
+
 test_smoke.o: test_smoke.cpp.o
 .PHONY : test_smoke.o
 
@@ -216,13 +209,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... test_log_record"
 	@echo "... test_smoke"
+	@echo "... test_log_record.o"
+	@echo "... test_log_record.i"
+	@echo "... test_log_record.s"
 	@echo "... test_smoke.o"
 	@echo "... test_smoke.i"
 	@echo "... test_smoke.s"

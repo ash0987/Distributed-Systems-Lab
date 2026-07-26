@@ -95,51 +95,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/CMakeFiles" "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build//CMakeFiles/progress.marks"
@@ -172,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named core
+
+# Build rule for target.
+core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core
+.PHONY : core
+
+# fast build rule for target.
+core/fast:
+	$(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/build
+.PHONY : core/fast
+
+#=============================================================================
 # Target rules for targets named log_generator
 
 # Build rule for target.
@@ -185,188 +153,6 @@ log_generator/fast:
 .PHONY : log_generator/fast
 
 #=============================================================================
-# Target rules for targets named clean-all
-
-# Build rule for target.
-clean-all: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean-all
-.PHONY : clean-all
-
-# fast build rule for target.
-clean-all/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/CMakeFiles/clean-all.dir/build.make _deps/zstd-build/CMakeFiles/clean-all.dir/build
-.PHONY : clean-all/fast
-
-#=============================================================================
-# Target rules for targets named libzstd_shared
-
-# Build rule for target.
-libzstd_shared: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libzstd_shared
-.PHONY : libzstd_shared
-
-# fast build rule for target.
-libzstd_shared/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/lib/CMakeFiles/libzstd_shared.dir/build.make _deps/zstd-build/lib/CMakeFiles/libzstd_shared.dir/build
-.PHONY : libzstd_shared/fast
-
-#=============================================================================
-# Target rules for targets named libzstd_static
-
-# Build rule for target.
-libzstd_static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libzstd_static
-.PHONY : libzstd_static
-
-# fast build rule for target.
-libzstd_static/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/build.make _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/build
-.PHONY : libzstd_static/fast
-
-#=============================================================================
-# Target rules for targets named uninstall
-
-# Build rule for target.
-uninstall: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uninstall
-.PHONY : uninstall
-
-# fast build rule for target.
-uninstall/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/lib/CMakeFiles/uninstall.dir/build.make _deps/zstd-build/lib/CMakeFiles/uninstall.dir/build
-.PHONY : uninstall/fast
-
-#=============================================================================
-# Target rules for targets named zstd
-
-# Build rule for target.
-zstd: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstd
-.PHONY : zstd
-
-# fast build rule for target.
-zstd/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/zstd.dir/build.make _deps/zstd-build/programs/CMakeFiles/zstd.dir/build
-.PHONY : zstd/fast
-
-#=============================================================================
-# Target rules for targets named zstdcat
-
-# Build rule for target.
-zstdcat: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstdcat
-.PHONY : zstdcat
-
-# fast build rule for target.
-zstdcat/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/zstdcat.dir/build.make _deps/zstd-build/programs/CMakeFiles/zstdcat.dir/build
-.PHONY : zstdcat/fast
-
-#=============================================================================
-# Target rules for targets named unzstd
-
-# Build rule for target.
-unzstd: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unzstd
-.PHONY : unzstd
-
-# fast build rule for target.
-unzstd/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/unzstd.dir/build.make _deps/zstd-build/programs/CMakeFiles/unzstd.dir/build
-.PHONY : unzstd/fast
-
-#=============================================================================
-# Target rules for targets named zstd.1
-
-# Build rule for target.
-zstd.1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstd.1
-.PHONY : zstd.1
-
-# fast build rule for target.
-zstd.1/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/zstd.1.dir/build.make _deps/zstd-build/programs/CMakeFiles/zstd.1.dir/build
-.PHONY : zstd.1/fast
-
-#=============================================================================
-# Target rules for targets named zstdgrep.1
-
-# Build rule for target.
-zstdgrep.1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstdgrep.1
-.PHONY : zstdgrep.1
-
-# fast build rule for target.
-zstdgrep.1/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/zstdgrep.1.dir/build.make _deps/zstd-build/programs/CMakeFiles/zstdgrep.1.dir/build
-.PHONY : zstdgrep.1/fast
-
-#=============================================================================
-# Target rules for targets named zstdless.1
-
-# Build rule for target.
-zstdless.1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstdless.1
-.PHONY : zstdless.1
-
-# fast build rule for target.
-zstdless.1/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/zstdless.1.dir/build.make _deps/zstd-build/programs/CMakeFiles/zstdless.1.dir/build
-.PHONY : zstdless.1/fast
-
-#=============================================================================
-# Target rules for targets named zstdcat.1
-
-# Build rule for target.
-zstdcat.1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstdcat.1
-.PHONY : zstdcat.1
-
-# fast build rule for target.
-zstdcat.1/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/zstdcat.1.dir/build.make _deps/zstd-build/programs/CMakeFiles/zstdcat.1.dir/build
-.PHONY : zstdcat.1/fast
-
-#=============================================================================
-# Target rules for targets named unzstd.1
-
-# Build rule for target.
-unzstd.1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unzstd.1
-.PHONY : unzstd.1
-
-# fast build rule for target.
-unzstd.1/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/unzstd.1.dir/build.make _deps/zstd-build/programs/CMakeFiles/unzstd.1.dir/build
-.PHONY : unzstd.1/fast
-
-#=============================================================================
-# Target rules for targets named zstd-frugal
-
-# Build rule for target.
-zstd-frugal: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstd-frugal
-.PHONY : zstd-frugal
-
-# fast build rule for target.
-zstd-frugal/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/zstd-frugal.dir/build.make _deps/zstd-build/programs/CMakeFiles/zstd-frugal.dir/build
-.PHONY : zstd-frugal/fast
-
-#=============================================================================
-# Target rules for targets named zstdmt
-
-# Build rule for target.
-zstdmt: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstdmt
-.PHONY : zstdmt
-
-# fast build rule for target.
-zstdmt/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/zstd-build/programs/CMakeFiles/zstdmt.dir/build.make _deps/zstd-build/programs/CMakeFiles/zstdmt.dir/build
-.PHONY : zstdmt/fast
-
-#=============================================================================
 # Target rules for targets named test_smoke
 
 # Build rule for target.
@@ -378,6 +164,19 @@ test_smoke: cmake_check_build_system
 test_smoke/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_smoke.dir/build.make tests/CMakeFiles/test_smoke.dir/build
 .PHONY : test_smoke/fast
+
+#=============================================================================
+# Target rules for targets named test_log_record
+
+# Build rule for target.
+test_log_record: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_log_record
+.PHONY : test_log_record
+
+# fast build rule for target.
+test_log_record/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_log_record.dir/build.make tests/CMakeFiles/test_log_record.dir/build
+.PHONY : test_log_record/fast
 
 #=============================================================================
 # Target rules for targets named Catch2
@@ -412,30 +211,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... clean-all"
-	@echo "... uninstall"
-	@echo "... unzstd"
-	@echo "... unzstd.1"
-	@echo "... zstd.1"
-	@echo "... zstdcat"
-	@echo "... zstdcat.1"
-	@echo "... zstdgrep.1"
-	@echo "... zstdless.1"
-	@echo "... zstdmt"
 	@echo "... Catch2"
 	@echo "... Catch2WithMain"
-	@echo "... libzstd_shared"
-	@echo "... libzstd_static"
+	@echo "... core"
 	@echo "... log_generator"
+	@echo "... test_log_record"
 	@echo "... test_smoke"
-	@echo "... zstd"
-	@echo "... zstd-frugal"
 .PHONY : help
 
 

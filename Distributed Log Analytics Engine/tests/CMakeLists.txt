@@ -7,3 +7,6 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 target_link_libraries(test_smoke PRIVATE Catch2::Catch2WithMain)
+
+add_executable(test_log_record test_log_record.cpp)
+target_link_libraries(test_log_record PRIVATE core)

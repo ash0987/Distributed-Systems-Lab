@@ -2,10 +2,8 @@
 	"InstallScripts" : 
 	[
 		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/cmake_install.cmake",
+		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/core/cmake_install.cmake",
 		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/tools/cmake_install.cmake",
-		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/_deps/zstd-build/cmake_install.cmake",
-		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/_deps/zstd-build/lib/cmake_install.cmake",
-		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/_deps/zstd-build/programs/cmake_install.cmake",
 		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/tests/cmake_install.cmake",
 		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/_deps/catch2-build/cmake_install.cmake",
 		"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/_deps/catch2-build/src/cmake_install.cmake"

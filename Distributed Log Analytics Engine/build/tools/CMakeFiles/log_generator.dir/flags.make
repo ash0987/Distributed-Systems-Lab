@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/_deps/zstd-src/build/cmake/../../lib"
+CXX_INCLUDES = 
 
 CXX_FLAGSarm64 = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -Wall -Wextra
 

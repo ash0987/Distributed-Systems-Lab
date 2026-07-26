@@ -111,7 +111,6 @@ log_generator_EXTERNAL_OBJECTS =
 tools/log_generator: tools/CMakeFiles/log_generator.dir/main.cpp.o
 tools/log_generator: tools/CMakeFiles/log_generator.dir/log_generator.cpp.o
 tools/log_generator: tools/CMakeFiles/log_generator.dir/build.make
-tools/log_generator: _deps/zstd-build/lib/libzstd.a
 tools/log_generator: tools/CMakeFiles/log_generator.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable log_generator"
 	cd "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/tools" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/log_generator.dir/link.txt --verbose=$(VERBOSE)
