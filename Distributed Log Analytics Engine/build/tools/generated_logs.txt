@@ -1,0 +1,20 @@
+2026-07-24T07:26:27Z|data-node-860|data-node|1|15|6191|INFO|metrics export to data-node-860 failed, status 404
+2026-07-21T15:23:33Z|data-node-1685|data-node|1|53|1769|INFO|certificate for data-node-1685 expires in 294 days
+2026-07-26T03:49:31Z|data-node-8666|data-node|1|59|3558|INFO|thread pool exhausted on data-node-8666, rejecting task
+2026-07-23T14:22:01Z|data-node-3556|data-node|1|51|9838|INFO|metrics export to data-node-3556 failed, status 400
+2026-07-23T17:52:21Z|data-node-5486|data-node|1|60|1775|INFO|connection pool exhausted, 81 requests queued
+2026-07-26T06:07:55Z|data-node-7989|data-node|1|29|7873|WARN|garbage collection paused execution for 996ms
+2026-07-24T23:25:55Z|data-node-878|data-node|1|53|5887|ERROR|backup completed for data-node, size 15MB
+2026-07-23T09:26:26Z|data-node-5258|data-node|1|51|7736|INFO|client req-3562 disconnected unexpectedly
+2026-07-24T21:55:40Z|data-node-3104|data-node|1|48|3454|INFO|snapshot created for data-node at 684ms
+2026-07-23T14:08:24Z|metadata-store-768|metadata-store|1|5|8385|INFO|connection pool exhausted, 359 requests queued
+2026-07-24T14:47:03Z|metadata-store-742|metadata-store|1|49|9755|INFO|disk usage on metadata-store-742 reached 22%
+2026-07-21T18:59:59Z|data-node-9914|data-node|1|51|4157|WARN|cache miss for key key-75767, fetching from upstream
+2026-07-23T21:05:46Z|data-node-7392|data-node|1|1|2306|INFO|rate limit exceeded for client req-5576, throttling
+2026-07-22T21:07:25Z|data-node-663|data-node|1|15|8994|INFO|shard rebalancing started for data-node
+2026-07-21T12:38:03Z|data-node-7554|data-node|1|49|2636|ERROR|failed to acquire lock on resource key-352229 after 113ms
+2026-07-23T04:43:56Z|data-node-5249|data-node|1|53|2707|ERROR|cache miss for key key-930193, fetching from upstream
+2026-07-22T10:14:32Z|data-node-8004|data-node|1|52|8777|INFO|health check failed for data-node-8004, marking unhealthy
+2026-07-23T23:33:56Z|data-node-7098|data-node|1|36|7546|INFO|replication lag on data-node-7098 is 864ms
+2026-07-24T19:37:59Z|data-node-4736|data-node|1|11|9155|INFO|scheduled job compaction completed in 1322ms
+2026-07-25T18:03:52Z|data-node-2049|data-node|1|1|6423|INFO|authentication failed for user user-539440: invalid credentials

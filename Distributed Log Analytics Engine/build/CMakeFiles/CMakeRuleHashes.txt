@@ -1,0 +1,11 @@
+# Hashes of file build rules.
+4d98552cc7a5b39b73a1788725598b2f _deps/zstd-build/CMakeFiles/clean-all
+08b3cc4003f94ba44a6eddde38090d43 _deps/zstd-build/lib/CMakeFiles/uninstall
+2b48d655d9160164445e71f16fe25f6a _deps/zstd-build/programs/CMakeFiles/unzstd
+94aa20b6b15d8e131628f1087355c838 _deps/zstd-build/programs/CMakeFiles/unzstd.1
+8e4612ef3a56162dc3c96ea5bf9fca76 _deps/zstd-build/programs/CMakeFiles/zstd.1
+6bc1f6f952e03d31dec444c2c116fe0c _deps/zstd-build/programs/CMakeFiles/zstdcat
+4369abca6a592b0bb553f69c9afd4d8e _deps/zstd-build/programs/CMakeFiles/zstdcat.1
+2d90d76c59de2938a837e5530aa00c87 _deps/zstd-build/programs/CMakeFiles/zstdgrep.1
+70d8602fc2d357269e2473e44b76a9c2 _deps/zstd-build/programs/CMakeFiles/zstdless.1
+5e4ca2058d4099f2b6b3bb57f1b27219 _deps/zstd-build/programs/CMakeFiles/zstdmt

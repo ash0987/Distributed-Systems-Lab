@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/log_generator.dir/main.cpp.o CMakeFiles/log_generator.dir/log_generator.cpp.o -o log_generator  ../_deps/zstd-build/lib/libzstd.a

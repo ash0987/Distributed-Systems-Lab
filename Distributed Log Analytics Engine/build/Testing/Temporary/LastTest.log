@@ -1,0 +1,22 @@
+Start testing: Jul 26 16:31 IST
+----------------------------------------------------------
+1/1 Testing: test_smoke
+1/1 Test: test_smoke
+Command: "/Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/tests/test_smoke"
+Directory: /Users/aashiagrawal/Design/Infrastructure Lab/Distributed Log Analytics Engine/build/tests
+"test_smoke" start time: Jul 26 16:31 IST
+Output:
+----------------------------------------------------------
+Randomness seeded to: 702030870
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.67 sec
+----------------------------------------------------------
+Test Passed.
+"test_smoke" end time: Jul 26 16:31 IST
+"test_smoke" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 26 16:31 IST

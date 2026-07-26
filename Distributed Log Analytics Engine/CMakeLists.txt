@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(LogAnalyticsEngine)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_compile_options(-Wall -Wextra)
+add_subdirectory(tools)
+enable_testing()
+add_subdirectory(tests)

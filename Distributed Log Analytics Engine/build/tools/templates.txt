@@ -1,0 +1,40 @@
+connection to {host} timed out after {ms}ms
+request {id} failed with status {code}
+retrying operation {op} (attempt {n}/5)
+disk usage on {host} reached {pct}%
+authentication failed for user {user}: invalid credentials
+cache miss for key {key}, fetching from upstream
+database query took {ms}ms, exceeding threshold
+received {n} bytes from {host} in {ms}ms
+circuit breaker opened for downstream {service}
+garbage collection paused execution for {ms}ms
+health check failed for {host}, marking unhealthy
+successfully processed batch of {n} records
+rate limit exceeded for client {id}, throttling
+connection pool exhausted, {n} requests queued
+leader election completed, new leader is {host}
+memory usage on {host} at {pct}%, approaching limit
+failed to acquire lock on resource {key} after {ms}ms
+request {id} completed successfully in {ms}ms
+replication lag on {host} is {ms}ms
+TLS handshake failed with peer {host}
+queue depth for {service} reached {n} messages
+scheduled job {op} started on {host}
+scheduled job {op} completed in {ms}ms
+config reload triggered on {host}
+received malformed request from client {id}
+upstream {service} returned status {code}
+session {id} expired for user {user}
+thread pool exhausted on {host}, rejecting task
+backup completed for {service}, size {n}MB
+certificate for {host} expires in {n} days
+DNS resolution for {host} took {ms}ms
+shard rebalancing started for {service}
+index build completed for {service} in {ms}ms
+deadlock detected involving resource {key}
+client {id} disconnected unexpectedly
+failover triggered for {service}, new primary {host}
+snapshot created for {service} at {ms}ms
+outbound request to {host} retried {n} times
+metrics export to {host} failed, status {code}
+node {host} joined cluster for {service}
