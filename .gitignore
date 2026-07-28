@@ -1,0 +1,4 @@
+build/
+*.wal
+*.segment
+generated_logs.txt

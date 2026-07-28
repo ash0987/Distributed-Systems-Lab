@@ -10,17 +10,25 @@ static std::vector<std::string> split(
 )
 {
     std::vector<std::string> parts;
+    parts.reserve(8);
 
-    std::stringstream ss(line);
+    size_t start = 0;
 
-    std::string item;
-
-
-    while (std::getline(ss, item, delimiter))
+    for (int i = 0; i < 7; i++)
     {
-        parts.push_back(item);
+        size_t pos = line.find(delimiter, start);
+
+        if (pos == std::string::npos)
+        {
+            return {};
+        }
+
+        parts.push_back(line.substr(start, pos - start));
+        start = pos + 1;
     }
 
+    // Last field (message)
+    parts.push_back(line.substr(start));
 
     return parts;
 }
@@ -85,4 +93,19 @@ bool parse_log_line(
 
 
     return true;
+}
+
+std::string serialize_record(
+    const LogRecord& record
+)
+{
+    return
+        record.timestamp + "|" +
+        record.host + "|" +
+        record.service + "|" +
+        std::to_string(record.seq_no) + "|" +
+        std::to_string(record.thread_id) + "|" +
+        std::to_string(record.process_id) + "|" +
+        record.level + "|" +
+        record.message;
 }

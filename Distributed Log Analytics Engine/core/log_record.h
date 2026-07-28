@@ -27,3 +27,7 @@ bool parse_log_line(
     const std::string& line,
     LogRecord& record
 );
+
+std::string serialize_record(
+    const LogRecord& record
+);
