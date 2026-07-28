@@ -10,10 +10,15 @@ QueryParser::QueryParser(
     tokenize(query);
 }
 
-std::unique_ptr<QueryNode>
-QueryParser::parse()
+
+std::unique_ptr<QueryNode> QueryParser::parse()
 {
-    return parse_or();
+    auto result = parse_or();
+    if (has_more())
+    {
+        throw std::runtime_error("Unexpected trailing tokens in query: " + peek());
+    }
+    return result;
 }
 
 //
