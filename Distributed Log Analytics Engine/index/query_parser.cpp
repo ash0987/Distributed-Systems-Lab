@@ -108,8 +108,7 @@ QueryParser::parse_not()
 // Primary
 //
 
-std::unique_ptr<QueryNode>
-QueryParser::parse_primary()
+std::unique_ptr<QueryNode> QueryParser::parse_primary()
 {
     if (!has_more())
     {
@@ -118,6 +117,10 @@ QueryParser::parse_primary()
         );
     }
 
+    //
+    // Parenthesized expression
+    //
+
     if (peek() == "(")
     {
         consume();
@@ -125,25 +128,40 @@ QueryParser::parse_primary()
         auto node =
             parse_or();
 
-        if (
-            !has_more() ||
-            consume() != ")"
-        )
+        if (!has_more())
         {
             throw std::runtime_error(
-                "Expected ')'"
+                "Expected ')'."
+            );
+        }
+
+        if (consume() != ")")
+        {
+            throw std::runtime_error(
+                "Expected ')'."
             );
         }
 
         return node;
     }
 
-    std::string token =
-        consume();
+    //
+    // ')' cannot start a primary expression.
+    //
+
+    if (peek() == ")")
+    {
+        throw std::runtime_error(
+            "Unexpected ')' while parsing query."
+        );
+    }
 
     //
-    // Field match?
+    // Parse a term or field match.
     //
+
+    std::string token =
+        consume();
 
     size_t pos =
         token.find(':');

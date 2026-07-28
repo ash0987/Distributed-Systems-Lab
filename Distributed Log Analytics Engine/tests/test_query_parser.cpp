@@ -34,7 +34,8 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << "threw: " << e.what() << "\n";
+        std::cout << "a) threw: " << e.what() << "\n";
+
     }
 
      try
@@ -45,17 +46,19 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << "threw: " << e.what() << "\n";
+        std::cout << "(a AND) threw: " << e.what() << "\n";
+
     }
 
     try
     {
-        QueryParser parser3("(a AND) OR (b)");
+        QueryParser parser3("(a AND))");
         auto tree3 = parser3.parse();
         std::cout << tree3->to_string() << "\n";
     }
     catch (const std::exception& e)
     {
-        std::cout << "threw: " << e.what() << "\n";
+        std::cout << "(a AND)) threw: " << e.what() << "\n";
+
     }
 }
