@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <map>
@@ -8,13 +9,11 @@ class InvertedIndex
 {
 private:
 
-    std::map<
-        std::string,
-        std::vector<int>
-    > index_;
+    std::map<std::string, std::vector<int>> index_;
+
+    size_t total_records_ = 0;
 
 public:
-    const std::map<std::string,std::vector<int>>& data() const;
 
     void add_record(
         int record_id,
@@ -26,4 +25,9 @@ public:
     ) const;
 
     size_t term_count() const;
+    
+    size_t total_records() const;
+
+    const std::map<std::string, std::vector<int>>& data() const;
+
 };

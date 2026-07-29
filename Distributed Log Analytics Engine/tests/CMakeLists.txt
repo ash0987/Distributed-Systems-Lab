@@ -31,3 +31,9 @@ target_link_libraries(test_query_ast PRIVATE index)
 
 add_executable(test_query_parser test_query_parser.cpp)
 target_link_libraries(test_query_parser PRIVATE index)
+
+add_executable(test_query_execution test_query_execution.cpp)
+target_link_libraries(test_query_execution PRIVATE index)
+
+add_executable(test_query_benchmark test_query_benchmark.cpp)
+target_link_libraries(test_query_benchmark PRIVATE index)
